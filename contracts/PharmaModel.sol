@@ -8,6 +8,9 @@ contract PharmaModel {
 
     // state variables
     address public s_owner;
+    // address public gateway;
+    // uint256 public supply;
+
     enum UserRole {
         Manufacturer,
         Distributor,
@@ -24,6 +27,7 @@ contract PharmaModel {
         uint256 price;
         uint256 quantity;
     }
+    
 
     mapping( address => UserRole ) private userRoles;
     mapping( address => Medicine[]) private medicineRecords;
@@ -35,9 +39,11 @@ contract PharmaModel {
     event OwnershipTransferred(address indexed from, address indexed to, string batchNumber);
 
     // constructor to initialize contract
-    constructor() {
+    constructor(/*address _gateway, uint256 _initialSupply*/) {
         s_owner = msg.sender;
         userRoles[msg.sender] = UserRole.Manufacturer;
+        // gateway = _gateway;
+        // supply = _initialSupply;
     }
 
     // modifiers for access control

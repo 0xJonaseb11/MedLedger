@@ -1,6 +1,6 @@
 const PharmaModel = artifacts.require("PharmaModel");
 
-module.exports = async function (deployer, network, accounts) {
+module.exports = async function (deployer/*, network, accounts*/) {
 
     const AXELAR_GATEWAY_ADDRESS = "0xe432150cce91c13a887f7D836923d5597adD8E31";
 
@@ -9,8 +9,8 @@ module.exports = async function (deployer, network, accounts) {
 
     // Deploy the BurnableToken contract with the required constructor parameters
     await deployer.deploy(
-        PharmaModel,
-        AXELAR_GATEWAY_ADDRESS,
-        initialSupply
+        PharmaModel
+        // AXELAR_GATEWAY_ADDRESS,
+        // initialSupply
     );
 };
