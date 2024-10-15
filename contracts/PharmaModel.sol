@@ -1,17 +1,20 @@
-// spdx-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import {Ownable} from "@opezeppelin/contracts/access/Ownable.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-contract PharmaDataRegistry {
+contract PharmaModel {
+
+    // state variables
     address public s_owner;
     enum UserRole {
         Manufacturer,
         Distributor,
         Retailer
     }
-
+    
+    // struct to store medicine info
     struct Medicine {
         address manufacturer;
         string name;
@@ -34,7 +37,7 @@ contract PharmaDataRegistry {
     // constructor to initialize contract
     constructor() {
         s_owner = msg.sender;
-        UserRoles[msg.sender] = UserRoles.Manufacturer;
+        userRoles[msg.sender] = UserRole.Manufacturer;
     }
 
     // modifiers for access control
@@ -50,18 +53,19 @@ contract PharmaDataRegistry {
 
     modifier onlyDistributorOrRetailer() {
         require(
-            userRoles[msg.sender] == UserRole.Distributor || userRoles[msg.sender] == UserRoles.Retailer,
+            userRoles[msg.sender] == UserRole.Distributor || userRoles[msg.sender] == UserRole.Retailer,
             "Only distributors and retailers can access this function"
         );
         _;
     }
 
     // add user
-    function addUser(address user, UserRole) external onlyOwner {
+    function addUser(address user, UserRole role) external onlyOwner {
         userRoles[user] = role;
         emit RoleUpdated(user, role);
     }
 
+    // update user role
     function updateUserRole(address user, UserRole newRole) external onlyOwner {
         require(user != s_owner, "You Cannot change owner's role");
         userRoles[user] = newRole;
@@ -69,7 +73,7 @@ contract PharmaDataRegistry {
     }
 
     // transfer ownership
-    function transferOwnership(address newOwner) external onlyOwner {
+    function transferOwnership(address newOwner) view external onlyOwner {
         require(newOwner != address(0));
     }
 
@@ -77,7 +81,7 @@ contract PharmaDataRegistry {
     function manufactureMedicine(
         string memory name,
         string memory batchNumber,
-        uint256 manufacturedDate,
+        uint256 manufacturingDate,
         uint256 expiryDate,
         uint256 price,
         uint256 quantity
@@ -95,7 +99,7 @@ contract PharmaDataRegistry {
     }
 
     // sell medicine
-    function sellMedicine(address buyer, string memory batchNumber, uint256 quantity) external onlyDistributerOrRetailer {
+    function sellMedicine(address buyer, string memory batchNumber, uint256 quantity) external onlyDistributorOrRetailer {
         Medicine[] storage medicines = medicineRecords[msg.sender];
         int256 index = findMedicineIndexByBatchNumber(medicines, batchNumber);
 
@@ -145,7 +149,7 @@ contract PharmaDataRegistry {
         );
     }
 
-    // enabling finding medicine by batchNumber
+    // enabling finding medicine by batchNumber with hash values
     function findMedicineIndexByBatchNumber(Medicine[] storage medicines, string memory batchNumber) internal view returns(int256) {
         for( int256 i = 0; i < int256(medicines.length); i++ ) {
             if (keccak256(bytes(medicines[uint256(i)].batchNumber)) == keccak256(bytes(batchNumber))) {
