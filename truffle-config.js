@@ -5,7 +5,7 @@ module.exports = {
   networks: {
     sepolia: {
       provider: () => new HDWalletProvider(
-        process.env.PRIVATE_KEY,
+        [process.env.PRIVATE_KEY],
         `https://sepolia.infura.io/v3/${process.env.INFURA_PROJECT_ID}`
       ),
       network_id: 11155111,
