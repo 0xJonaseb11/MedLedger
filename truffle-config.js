@@ -1,32 +1,24 @@
-require("dotenv").config();
-const HDWalletProvider = require("@truffle/hdwallet-provider");
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+
+// Your private key (keep this secret and never commit it to version control!)
+const PRIVATE_KEY = [process.env.PRIVATE_KEY];
 
 module.exports = {
-  networks: {
-    sepolia: {
-      provider: () => new HDWalletProvider(
-        [process.env.PRIVATE_KEY],
-        `https://sepolia.infura.io/v3/${process.env.INFURA_PROJECT_ID}`
-      ),
-      network_id: 11155111,
-      gas: 6000000,         
-      gasPrice: 20000000000, 
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
+networks: {
+    warden: {
+    provider: function() {
+        return new HDWalletProvider(PRIVATE_KEY, "http://localhost:8545");
     },
-    ganache: {
-      host: "127.0.0.1",
-      port: 7545,
-      network_id: "*", // Match any network id
+    network_id: 1337, 
+    host: "127.0.0.1",
+    port: 8545,
+    gas: 5500000,
+    gasPrice: 20000000000,  // 20 gwei
     },
-  },
-  compilers: {
+},
+compilers: {
     solc: {
-      version: "0.8.20",
-    },
-  },
-  mocha: {
-    timeout: 100000,
-  },
+    version: "0.8.20",
+    }
+}
 };
