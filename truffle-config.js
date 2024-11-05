@@ -9,7 +9,7 @@ networks: {
     provider: function() {
         return new HDWalletProvider(PRIVATE_KEY, "http://localhost:8545");
     },
-    network_id: 1337, 
+    network_id: "*", 
     host: "127.0.0.1",
     port: 8545,
     gas: 5500000,
