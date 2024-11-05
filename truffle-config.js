@@ -1,24 +1,23 @@
-const HDWalletProvider = require('@truffle/hdwallet-provider');
-
-// Your private key (keep this secret and never commit it to version control!)
-const PRIVATE_KEY = [process.env.PRIVATE_KEY];
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+require("dotenv").config();
 
 module.exports = {
-networks: {
-    warden: {
-    provider: function() {
-        return new HDWalletProvider(PRIVATE_KEY, "http://localhost:8545");
+    networks: {
+        sepolia: {
+            provider: () => new HDWalletProvider(
+                process.env.PRIVATE_KEY,
+                `${process.env.INFURA_RPC_URL}`
+            ),
+            network_Id: 11155111,
+            gas: 5500000,
+            confirmations: 2,
+            timeoutBlocks: 200,
+            skipDryRun: true
+        },
     },
-    network_id: "*", 
-    host: "127.0.0.1",
-    port: 8545,
-    gas: 5500000,
-    gasPrice: 20000000000,  // 20 gwei
-    },
-},
-compilers: {
-    solc: {
-    version: "0.8.20",
+    compilers: {
+        solc: {
+            version: "0.8.20"
+        }
     }
-}
 };
