@@ -5,11 +5,11 @@ module.exports = {
     networks: {
         sepolia: {
             provider: () => new HDWalletProvider(
-                process.env.PRIVATE_KEY,
+                [`0x${process.env.PRIVATE_KEY}`],
                 `${process.env.INFURA_RPC_URL}`
             ),
-            network_Id: 11155111,
-            gas: 5500000,
+            network_id: 11155111,
+            gas: 550000,
             confirmations: 2,
             timeoutBlocks: 200,
             skipDryRun: true
