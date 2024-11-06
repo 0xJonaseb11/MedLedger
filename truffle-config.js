@@ -6,13 +6,14 @@ module.exports = {
         sepolia: {
             provider: () => new HDWalletProvider(
                 [`0x${process.env.PRIVATE_KEY}`],
-                `${process.env.INFURA_RPC_URL}`
+                `https://eth-sepolia.g.alchemy.com/v2/6ZlZVfEswLzLCnF55WrOn8Da9gbZKVCO`
             ),
             network_id: 11155111,
-            gas: 550000,
+            gas: 5500000,
             confirmations: 2,
             timeoutBlocks: 200,
-            skipDryRun: true
+            skipDryRun: true,
+            networkCheckTimeout: 100000
         },
     },
     compilers: {
