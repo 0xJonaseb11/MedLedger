@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/AppointmentRegistry.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract AppointmentRegistry {\n    enum AppointmentStatus { Requested, Approved, Declined }\n\n    struct Appointment {\n        uint id;\n        address patient;\n        address doctor;\n        uint date;\n        string reason;\n        AppointmentStatus status;\n    }\n\n    mapping(uint => Appointment) public appointments; // Mapping of appointment ID to Appointment\n    mapping(address => uint[]) public patientAppointments; // Patient's list of appointment IDs\n    mapping(address => uint[]) public doctorAppointments; // Doctor's list of appointment IDs\n\n    uint public nextAppointmentId;\n\n    event AppointmentRequested(uint appointmentId, address patient, address doctor, uint date, string reason);\n    event AppointmentApproved(uint appointmentId, address doctor);\n    event AppointmentDeclined(uint appointmentId, address doctor);\n\n    // Patient requests an appointment with a doctor at a certain date\n    function requestAppointment(address doctor, uint date, string calldata reason) external {\n        require(doctor != address(0), \"Invalid doctor address\");\n        require(date > block.timestamp, \"Date should be in the future\");\n\n        uint appointmentId = nextAppointmentId++;\n        appointments[appointmentId] = Appointment({\n            id: appointmentId,\n            patient: msg.sender,\n            doctor: doctor,\n            date: date,\n            reason: reason,\n            status: AppointmentStatus.Requested\n        });\n\n        patientAppointments[msg.sender].push(appointmentId);\n        doctorAppointments[doctor].push(appointmentId);\n\n        emit AppointmentRequested(appointmentId, msg.sender, doctor, date, reason);\n    }\n\n    // Doctor approves an appointment\n    function approveAppointment(uint appointmentId) external {\n        Appointment storage appointment = appointments[appointmentId];\n        require(msg.sender == appointment.doctor, \"Only the doctor can approve this appointment\");\n        require(appointment.status == AppointmentStatus.Requested, \"Appointment is not in 'Requested' status\");\n\n        appointment.status = AppointmentStatus.Approved;\n\n        emit AppointmentApproved(appointmentId, msg.sender);\n    }\n\n    // Doctor declines an appointment\n    function declineAppointment(uint appointmentId) external {\n        Appointment storage appointment = appointments[appointmentId];\n        require(msg.sender == appointment.doctor, \"Only the doctor can decline this appointment\");\n        require(appointment.status == AppointmentStatus.Requested, \"Appointment is not in 'Requested' status\");\n\n        appointment.status = AppointmentStatus.Declined;\n\n        emit AppointmentDeclined(appointmentId, msg.sender);\n    }\n\n    // View all appointments for a specific patient\n    function getPatientAppointments(address patient) external view returns (Appointment[] memory) {\n        uint[] memory appointmentIds = patientAppointments[patient];\n        Appointment[] memory result = new Appointment[](appointmentIds.length);\n\n        for (uint i = 0; i < appointmentIds.length; i++) {\n            result[i] = appointments[appointmentIds[i]];\n        }\n\n        return result;\n    }\n\n    // View all appointments for a specific doctor\n    function getDoctorAppointments(address doctor) external view returns (Appointment[] memory) {\n        uint[] memory appointmentIds = doctorAppointments[doctor];\n        Appointment[] memory result = new Appointment[](appointmentIds.length);\n\n        for (uint i = 0; i < appointmentIds.length; i++) {\n            result[i] = appointments[appointmentIds[i]];\n        }\n\n        return result;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
