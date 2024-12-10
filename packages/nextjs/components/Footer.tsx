@@ -44,7 +44,7 @@ export const Footer = () => {
       <div className="w-full">
         <ul className="menu menu-horizontal w-full">
           <div className="flex justify-center items-center gap-2 text-xl w-full">
-            <p className="text-lg mt-4">© {new Date().getFullYear()} MedLedger. All rights reserved.</p>
+            <p className="text-lg mt-4">© {new Date().getFullYear()} MedLedger(MedRecordchain). All rights reserved.</p>
           </div>
         </ul>
       </div>
