@@ -80,7 +80,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="flex flex-col justify-center order-1 lg:order-2 text-white">
-              <h2 className="text-4xl font-bold mb-6">Why MedLedger?</h2>
+              <h2 className="text-4xl font-bold mb-6">Why MedLedger(MedRecordchain)?</h2>
               <p className="text-lg mb-4 leading-relaxed">
                 Our system provides a secure and immutable platform for patient records, ensuring only authorized
                 doctors can access and update information during consultations.
