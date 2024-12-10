@@ -94,7 +94,7 @@ export const Header = () => {
           </div>
           <div className="flex flex-col">
             {/* <span className="font-bold leading-tight">Scaffold-ETH</span> */}
-            <span className="font-bold leading-tight">MedRecord Chain</span>
+            <span className="font-bold leading-tight">MedLedger </span>
             {/* <span className="text-xs">Ethereum dev stack</span> */}
           </div>
         </Link>

@@ -5,7 +5,7 @@ import "~~/styles/globals.css";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
 export const metadata = getMetadata({
-  title: "MedRecord Chain",
+  title: "MedLedger",
   description: "Secure and Decentralized Health Records",
 });
 

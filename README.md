@@ -1,7 +1,7 @@
 
-# MedRecordChain
+# MedLedger
 
-MedRecordChain is a decentralized platform for managing patient medical records and appointments using blockchain technology. It allows patients to securely store their health data on the blockchain and grants permission-based access to doctors. Built on [Scaffold-ETH](https://github.com/scaffold-eth/scaffold-eth-2), this project ensures transparency and patient control over sensitive medical information.
+MedLedger is a decentralized platform for managing patient medical records and appointments using blockchain technology. It allows patients to securely store their health data on the blockchain and grants permission-based access to doctors. Built on [Scaffold-ETH](https://github.com/scaffold-eth/scaffold-eth-2), this project ensures transparency and patient control over sensitive medical information.
 
 ## ✨ Features
 
@@ -29,8 +29,8 @@ MedRecordChain is a decentralized platform for managing patient medical records 
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/medrecordchain.git
-   cd medrecordchain
+   git clone https://github.com/yourusername/MedLedger.git
+   cd MedLedger
    ```
 2. **Install Dependencies**:
    ```bash
@@ -65,7 +65,7 @@ MedRecordChain is a decentralized platform for managing patient medical records 
 
 ## 📜 Smart Contracts
 
-MedRecordChain is built with Solidity smart contracts, handling the core functionality of record management and appointment booking:
+MedLedger is built with Solidity smart contracts, handling the core functionality of record management and appointment booking:
 
 - **PatientRegistry**: Manages patient data and permissions.
 - **DoctorRegistry**: Handles doctor registration and access control.

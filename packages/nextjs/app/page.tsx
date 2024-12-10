@@ -64,7 +64,7 @@ const Home: NextPage = () => {
           <div className="relative z-10 text-center max-w-2xl">
             <h1 className="text-5xl font-bold mb-4">Secure and Decentralized Health Records</h1>
             <p className="text-xl mb-6">
-              MedRecordChain ensures privacy, integrity, and accessibility of health records.
+            MedLedger ensures privacy, integrity, and accessibility of health records.
             </p>
           </div>
         </section>
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="flex flex-col justify-center order-1 lg:order-2 text-white">
-              <h2 className="text-4xl font-bold mb-6">Why MedRecordChain?</h2>
+              <h2 className="text-4xl font-bold mb-6">Why MedLedger?</h2>
               <p className="text-lg mb-4 leading-relaxed">
                 Our system provides a secure and immutable platform for patient records, ensuring only authorized
                 doctors can access and update information during consultations.
@@ -98,7 +98,7 @@ const Home: NextPage = () => {
             <div className="flex flex-col justify-center text-white">
               <h2 className="text-4xl font-bold mb-6">A Vision for Better Healthcare</h2>
               <p className="text-lg mb-4 leading-relaxed">
-                MedRecordChain leverages blockchain technology to eliminate data tampering and unauthorized access,
+              MedLedger leverages blockchain technology to eliminate data tampering and unauthorized access,
                 providing continuity of care across medical facilities.
               </p>
               <p className="text-lg leading-relaxed">
@@ -118,7 +118,7 @@ const Home: NextPage = () => {
         {/* Registration Section */}
         <section id="register" className="bg-gray-800 py-24 text-white">
           <div className="max-w-4xl mx-auto text-center px-4">
-            <h2 className="text-5xl font-bold text-white mb-10">Get Started with MedRecordChain</h2>
+            <h2 className="text-5xl font-bold text-white mb-10">Get Started with MedLedger</h2>
             {patientLoading || doctorLoading ? (
               <div className="loading loading-spinner text-white"></div>
             ) : (
