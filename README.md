@@ -128,18 +128,18 @@ MedLedger is licensed under the [MIT License](./LICENCE). Feel free to fork, mod
 
 _**For more information, reach out to us at <sebejaz99@gmail.com>**_
 
-Acknowledgments
-I want to express my sincere gratitude to the following individuals and resourceful companies for making this project possible:
-
 ## Acknowledgments
 
 I want to express my sincere gratitude to the following individuals and resourceful companies for making this project possible:
 
+[Shape Network](https://docs.shape.network/documentation) :: For prividing me more than enough knowledge to build such an amazing masterpiece being my first time to build on the network!! It really looked soo easyy!!!!
 
 [Openzeppelin](https://www.openzeppelin.com/) :: For their robust libraries and tools that streamlined the smart contract development process.
+
 [Scaffold-ETH2](https://scaffold-eth-2-docs.vercel.app/quick-start) :: For providing a solid foundation for building Ethereum applications quickly.
-[Ethereum Organisation](https://ethereum.org/en/developers/docs/) :: For serving as a comprehensive resource for understanding Ethereum development(Solidity).
-[Shape Network](https://docs.shape.network/documentation) :: For prividing me more than enough knowledge to build such an amazing masterpiece being my first time to build on the network!! It really looked soo easyy!!!!
+
+[Ethereum Organisation](https://ethereum.org/en/developers/docs/) :: For serving as a comprehensive resource for understanding Ethereum development.
+
 [AlchemyUniversity](https://www.alchemy.com/university) For serving as my education hub for years and now on!! Your free education is so much considered!!
 
 _**Thank you all for your support and contributions!**_
