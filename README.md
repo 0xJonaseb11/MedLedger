@@ -4,7 +4,7 @@
 
 ## About
 
-MedLedger (initially called medrecordchain[from video-demo]) is a decentralized platform built to securely manage patient medical records and appointments using blockchain technology. By leveraging blockchain’s transparency, patients retain full control over their sensitive health data, granting permission-based access to healthcare professionals. MedLedger ensures data integrity, privacy, and seamless interactions between patients and doctors.
+MedLedger (initially called medrecordchain[from video-demo]) is a decentralized platform built on [`SHAPE Network`](https://shape.network/) to securely manage patient medical records and appointments using blockchain technology. By leveraging blockchain’s transparency, patients retain full control over their sensitive health data, granting permission-based access to healthcare professionals. MedLedger ensures data integrity, privacy, and seamless interactions between patients and doctors.
 
 ## Table of Contents
 [About](#about)
@@ -44,7 +44,7 @@ MedLedger aims to address these issues by providing a decentralized solution tha
 ## Technology Stack
 
 - **Frontend**: React, Next.js, TypeScript
-- **Backend**: Solidity smart contracts deployed on Ethereum
+- **Backend**: Solidity smart contracts deployed on Shape Network - A Layer 2 Blockchain for creators
 - **Blockchain Framework**: Scaffold-ETH for quick and efficient development and deployment
 - **Wallet Integration**: MetaMask, WalletConnect via `wagmi`
 - **Deployment**: Vercel for hosting
@@ -131,26 +131,15 @@ _**For more information, reach out to us at <sebejaz99@gmail.com>**_
 Acknowledgments
 I want to express my sincere gratitude to the following individuals and resourceful companies for making this project possible:
 
-Irere Emmanuel(@Irere123) :: For his assistance in developing the best modern ever-to-exist User Interface for seamless interaction with smartcontracts.
-Openzeppelin :: For their robust libraries and tools that streamlined the smart contract development process.
-Scaffold-ETH2:: For providing a solid foundation for building Ethereum applications quickly.
-Ethereum Organisation:: For serving as a comprehensive resource for understanding Ethereum development.
-
-Thank you all for your support and contributions!
-
-Contact Information
-With collaboration or guidance on this or future projects, feel free to reach out to us at sebejaz99@gmail.com
-
-Future Work
-As our team plans to make this project a big one, we plan to introduce the use of Hyperledger fabric to develop the same but improved version of this project to facilitate Confidential Enterprise-based solutions.
-
 ## Acknowledgments
 
 I want to express my sincere gratitude to the following individuals and resourceful companies for making this project possible:
 
+
 [Openzeppelin](https://www.openzeppelin.com/) :: For their robust libraries and tools that streamlined the smart contract development process.
 [Scaffold-ETH2](https://scaffold-eth-2-docs.vercel.app/quick-start) :: For providing a solid foundation for building Ethereum applications quickly.
-[Ethereum Organisation](https://ethereum.org/en/developers/docs/) :: For serving as a comprehensive resource for understanding Ethereum development.
+[Ethereum Organisation](https://ethereum.org/en/developers/docs/) :: For serving as a comprehensive resource for understanding Ethereum development(Solidity).
+[Shape Network](https://docs.shape.network/documentation) :: For prividing me more than enough knowledge to build such an amazing masterpiece being my first time to build on the network!! It really looked soo easyy!!!!
 [AlchemyUniversity](https://www.alchemy.com/university) For serving as my education hub for years and now on!! Your free education is so much considered!!
 
 _**Thank you all for your support and contributions!**_

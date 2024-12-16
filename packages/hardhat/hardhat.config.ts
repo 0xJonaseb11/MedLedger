@@ -33,7 +33,8 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  defaultNetwork: "arbitrumSepolia",
+  defaultNetwork: "shapeSepolia",
+  // defaultNetwork: "arbitrumSepolia",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -48,6 +49,10 @@ const config: HardhatUserConfig = {
         url: forkingURL,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
       },
+    },
+    shapeSepolia: {
+      url: `https://shape-sepolia.g.alchemy.com/v2/xK2JBsKJTCXfuz3iKesCyniq-URMcRGQ`,
+      accounts: [deployerPrivateKey],
     },
     mainnet: {
       url: `https://cloudflare-eth.com`,
