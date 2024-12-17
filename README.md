@@ -136,9 +136,13 @@ I want to express my sincere gratitude to the following individuals and resource
 I want to express my sincere gratitude to the following individuals and resourceful companies for making this project possible:
 
 [2204protocol](2204protocol@gmail.com) :: For collaborating on this masterpiece
+
 [Openzeppelin](https://www.openzeppelin.com/) :: For their robust libraries and tools that streamlined the smart contract development process.
+
 [Scaffold-ETH2](https://scaffold-eth-2-docs.vercel.app/quick-start) :: For providing a solid foundation for building Ethereum applications quickly.
+
 [Ethereum Organisation](https://ethereum.org/en/developers/docs/) :: For serving as a comprehensive resource for understanding Ethereum development.
+
 [AlchemyUniversity](https://www.alchemy.com/university) For serving as my education hub for years and now on!! Your free education is so much considered!!
 
 _**Thank you all for your support and contributions!**_
